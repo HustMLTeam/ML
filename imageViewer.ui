@@ -32,7 +32,7 @@
          <x>0</x>
          <y>0</y>
          <width>780</width>
-         <height>557</height>
+         <height>526</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -53,6 +53,45 @@
       </widget>
      </widget>
     </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="line_x">
+        <property name="placeholderText">
+         <string>起始点横坐标：x</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="line_y">
+        <property name="placeholderText">
+         <string>起始点纵坐标：y</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="line_w">
+        <property name="placeholderText">
+         <string>方框宽度：w</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="line_h">
+        <property name="placeholderText">
+         <string>方框高度：h</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDrawBox">
+        <property name="text">
+         <string>DrawBox</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -72,50 +111,14 @@
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
    </widget>
-   <widget class="QMenu" name="menu_View">
-    <property name="title">
-     <string>&amp;View</string>
-    </property>
-    <addaction name="actionZoom_in"/>
-    <addaction name="actionZoom_out"/>
-    <addaction name="action_Normal_Size"/>
-    <addaction name="actionFit_to_Window"/>
-   </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="action_About"/>
    </widget>
    <addaction name="menu_File"/>
-   <addaction name="menu_View"/>
    <addaction name="menu_Help"/>
   </widget>
-  <action name="actionZoom_in">
-   <property name="text">
-    <string>Zoom &amp;In</string>
-   </property>
-  </action>
-  <action name="actionZoom_out">
-   <property name="text">
-    <string>Zoom &amp;Out</string>
-   </property>
-  </action>
-  <action name="action_Normal_Size">
-   <property name="text">
-    <string>&amp;Normal Size</string>
-   </property>
-  </action>
-  <action name="actionFit_to_Window">
-   <property name="text">
-    <string>Fit to &amp;Window</string>
-   </property>
-  </action>
-  <action name="action_About">
-   <property name="text">
-    <string>&amp;About</string>
-   </property>
-  </action>
   <action name="action_Open">
    <property name="text">
     <string>&amp;Open</string>
@@ -128,5 +131,70 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>line_x</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnDrawBox</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>740</x>
+     <y>581</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>line_y</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnDrawBox</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>746</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>line_w</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnDrawBox</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>474</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>753</x>
+     <y>578</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>line_h</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnDrawBox</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>628</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>578</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
