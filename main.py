@@ -66,27 +66,23 @@ class ImageApp(QtGui.QMainWindow, imageViewer.Ui_MainWindow):
         if not 0 <= x <= self.pixmap.width():
             self.showErrMsg('Value Error', 'x should be an integer between 0 and %d' 
                 % self.pixmap.width())
-            return
-        if not 0 <= y <= self.pixmap.height():
+        else if not 0 <= y <= self.pixmap.height():
             self.showErrMsg('Value Error', 'y should be an integer between 0 and %d'
                 % self.pixmap.height())
-            return
-        if not 0 <= w <= (self.pixmap.width() - x):
+        else if not 0 <= w <= (self.pixmap.width() - x):
             self.showErrMsg('Value Error', 'x+w should be an integer between 0 and %d'
                 % self.pixmap.width())
-            return
-        if not 0 <= h <= (self.pixmap.height() - y):
+        else if not 0 <= h <= (self.pixmap.height() - y):
             self.showErrMsg('Value Error', 'y+h should be an integer between 0 and %d'
                 % self.pixmap.height())
-            return
-        
-        painter = QPainter()
-        painter.begin(self.pixmap)
-        pen = QPen(QtCore.Qt.red, 5, QtCore.Qt.SolidLine)
-        painter.setPen(pen)
-        painter.drawRect(x, y, w, h)
-        painter.end()
-        self.labelImage.setPixmap(self.pixmap)
+        else:
+            painter = QPainter()
+            painter.begin(self.pixmap)
+            pen = QPen(QtCore.Qt.red, 5, QtCore.Qt.SolidLine)
+            painter.setPen(pen)
+            painter.drawRect(x, y, w, h)
+            painter.end()
+            self.labelImage.setPixmap(self.pixmap)
     
     def exitApp(self):
         self.close()
