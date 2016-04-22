@@ -66,14 +66,14 @@ class ImageApp(QtGui.QMainWindow, imageViewer.Ui_MainWindow):
         if not 0 <= x <= self.pixmap.width():
             self.showErrMsg('Value Error', 'x should be an integer between 0 and %d' 
                 % self.pixmap.width())
-        else if not 0 <= y <= self.pixmap.height():
+        elif not 0 <= y <= self.pixmap.height():
             self.showErrMsg('Value Error', 'y should be an integer between 0 and %d'
                 % self.pixmap.height())
-        else if not 0 <= w <= (self.pixmap.width() - x):
-            self.showErrMsg('Value Error', 'x+w should be an integer between 0 and %d'
+        elif not 0 <= w <= (self.pixmap.width() - x):
+            self.showErrMsg('Value Error', 'x + w should be an integer between 0 and %d'
                 % self.pixmap.width())
-        else if not 0 <= h <= (self.pixmap.height() - y):
-            self.showErrMsg('Value Error', 'y+h should be an integer between 0 and %d'
+        elif not 0 <= h <= (self.pixmap.height() - y):
+            self.showErrMsg('Value Error', 'y + h should be an integer between 0 and %d'
                 % self.pixmap.height())
         else:
             painter = QPainter()
