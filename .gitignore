@@ -65,3 +65,9 @@ target/
 .jpg
 .jpeg
 .png
+
+# Video
+.mp4
+
+# Data
+geli/
